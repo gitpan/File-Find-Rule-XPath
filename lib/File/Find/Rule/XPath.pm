@@ -1,4 +1,4 @@
-# $Id: XPath.pm,v 1.2 2002/12/18 09:27:58 grantm Exp $
+# $Id: XPath.pm,v 1.3 2003/11/10 08:30:33 grantm Exp $
 
 package File::Find::Rule::XPath;
 
@@ -6,10 +6,11 @@ use strict;
 use Carp;
 use File::Find::Rule;
 use File::Spec;
+use Cwd ();
 
 use vars qw($VERSION @ISA @EXPORT);
 
-$VERSION = '0.02';
+$VERSION = '0.03';
 @ISA     = qw(File::Find::Rule);
 @EXPORT  = @File::Find::Rule::EXPORT;
 
@@ -29,7 +30,7 @@ sub File::Find::Rule::xpath {
     croak 'Can\'t locate XML::LibXML or XML::XPath in @INC';
   }
 
-  my $cwd = File::Spec->cwd();
+  my $cwd = Cwd::cwd();
 
   if($use_libxml) {
 

@@ -6,3 +6,5 @@ lib/File/Find/Rule/XPath.pm
 t/0_config.t
 t/1_basics.t
 t/2_cleanup.t
+t/9_pod.t
+META.yml                                 Module meta-data (added by MakeMaker)
